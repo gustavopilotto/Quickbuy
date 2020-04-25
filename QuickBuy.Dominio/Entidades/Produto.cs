@@ -9,7 +9,15 @@
 
         public override void Validate()
         {
-            throw new System.NotImplementedException();
+            if (string.IsNullOrEmpty(Id.ToString()))
+                AdicionarCritica("É Obrigatório prencher o Código do Produto");
+            if (string.IsNullOrEmpty(Nome))
+                AdicionarCritica("É Obrigatório prencher o Nome do Produto");
+            if (string.IsNullOrEmpty(Descricao))
+                AdicionarCritica("É Obrigatório prencher a Descrição do Produto");
+            if (string.IsNullOrEmpty(Preco.ToString()))
+                AdicionarCritica("É Obrigatório prencher o Preço do Produto");
+
         }
     }
 }

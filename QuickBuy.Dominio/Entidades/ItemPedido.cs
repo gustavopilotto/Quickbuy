@@ -8,7 +8,12 @@
 
         public override void Validate()
         {
-            throw new System.NotImplementedException();
+            if (string.IsNullOrEmpty(Id.ToString()))
+                AdicionarCritica("Obrigatório preenchimento da Sequência do Item");
+            if (string.IsNullOrEmpty(ProdutoId.ToString()))
+                AdicionarCritica("Obrigatório preenchimento do Produto");
+            if (string.IsNullOrEmpty(Quantidade.ToString()))
+                AdicionarCritica("Obrigatório preenchimento da Quantidade");
         }
     }
 }
